@@ -1,11 +1,9 @@
 [submodule "sprites"]
 	path = sprites
 	url = https://github.com/PokeAPI/sprites.git
-
 [submodule "notes"]
 	path = notes
 	url = https://gist.github.com/7bcd779e447e4998decc73b2b1acb8d6.git
-
 [submodule "pokeapi"]
 	path = pokeapi
 	url = https://github.com/PokeAPI/pokeapi.git
