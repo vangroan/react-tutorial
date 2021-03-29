@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { Button, Container, Header, Segment } from 'semantic-ui-react';
 
 const formatter = new Intl.NumberFormat('en-ZA', {
@@ -10,14 +11,16 @@ function App() {
   // -------
   //  State
   // -------
-  const initial = 10000;
-  const [balance, setBalance] = useState(initial);
+  // const initial = 10000;
+  // const [balance, setBalance] = useState(initial);
+  const balance = useSelector(state => state.balance, shallowEqual);
 
   // --------
   //  Action
   // --------
-  const deposit = () => setBalance(balance + 100);
-  const withdraw = () => setBalance(balance - 100);
+  const dispatch = useDispatch();
+  const deposit = () => dispatch({ type: 'app/deposit', payload: 100 }); //setBalance(balance + 100);
+  const withdraw = () => dispatch({ type: 'app/withdraw', payload: 100 });// setBalance(balance - 100);
 
   // ------
   //  View
