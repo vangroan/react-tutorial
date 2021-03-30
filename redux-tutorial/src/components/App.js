@@ -24,12 +24,12 @@ function App() {
   // ------
   return (
     <div>
-      <Container text style={{paddingTop: "2em"}}>
+      <Container text style={{ paddingTop: "2em" }}>
         <Segment.Group>
           <Segment padded="very" textAlign="center">
             <Header as="h2">
               {formatter.format(balance)}
-            <Header.Subheader>Balance</Header.Subheader>
+              <Header.Subheader>Balance</Header.Subheader>
             </Header>
           </Segment>
           <Segment padded="very" textAlign="center">
