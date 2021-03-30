@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import swaggerui from 'swagger-ui-express';
 import fs from 'fs';
 // import swaggerdoc from './swagger.json';
@@ -8,6 +9,9 @@ const swaggerdoc = JSON.parse(fs.readFileSync('./swagger.json'));
 const app = express();
 app.use(express.json());
 app.use('/swagger', swaggerui.serve, swaggerui.setup(swaggerdoc));
+
+// Enable CORS for all routes
+app.use(cors());
 
 const port = 8000;
 const state = {
